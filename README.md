@@ -87,7 +87,7 @@ o operador == faz a comparação apenas do valor.
 console.log(18 == "18");
 ```
 
-No exemplo acima o retorno vai ser <b>True<b>
+No exemplo acima o retorno vai ser <b>True</b>
 pois foi comparado apenas os valores em si 18 é igual a 18.
 
 Já o operador === faz a comparação entre valores e tipo de dados.
@@ -96,4 +96,22 @@ Já o operador === faz a comparação entre valores e tipo de dados.
 console.log(18 === "18");
 ```
 
-Nesse caso o retorno seria <b>False<b> pois os tipos não batem (Number e string)
+Nesse caso o retorno seria <b>False</b> pois os tipos não batem (Number e string)
+
+## ternario
+
+podemos trabalhar com condições utilizando o operador ternario.
+
+<b>Sintaxe:</b>
+
+```javascript:
+let age = 18;
+let podeBeber = age >=18 //condição ?
+console.log("pode beber") : console.log("não pode beber") // else
+```
+
+mas como funciona esse ternario?
+
+primeiros colocamos a condição ?
+caso seja verdadeira cai no primeiro console : caso seja falso, cai no segundo
+concole.
