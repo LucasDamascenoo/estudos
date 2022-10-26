@@ -221,3 +221,43 @@ No Array, assim como vimos em strings, usamos indices para acessar cada elemento
 No nosso exemplo acima,temos um array com 3 valores que vão do 0 - 2, mas como assim? não são 3 valores?
 
 No Js nossos indices começam do 0 em diante.
+
+# Fluxo de Controle
+
+# Loops
+
+Loops são uma repetição de código atrelada a uma certa condição que enquanto verdadeira executa algo repetidamente.
+
+<b>For</b>: Usamos for em casos que sabemos a quantidade de vezes que iremos repetir um certo código.
+
+<b>Exemplo:</b>:
+
+```javascript:
+for(let i = 0; i<10; i++){
+  console.log(i)
+};
+```
+
+No exemplo acima temos 3 caracteristica.
+
+- Inicializador
+- Condição
+- Incremento
+
+<b>Inicializador:</b>: é uma variavel criada para indicarmos qual é o nosso numero inicial.
+
+<b>Condição:</b>: é uma condição de parada, ou seja, enquanto essa condição for verdadeira ela roda o loop, assim que virar falsa, para o loop.
+
+<b>Incremento:</b>: adiciona um valor na nossa variavel iniciadora, toda "rodada" em que a nossa condição ainda é verdadeira, cada vez que o valor é incrementado,ocorre uma interação,no nosso caso ele vai iterar 10x.
+
+<b>While</b>: Usamos while em casos que não sabemos a quantidade de vezes que iremos repetir um certo código.
+
+<b>Exemplo:</b>:
+
+```javascript:
+let i = 0
+while(i<5){
+  console.log(i)
+  i++
+};
+```
