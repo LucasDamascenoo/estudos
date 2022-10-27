@@ -28,6 +28,46 @@ Diferente da outra maneira,const sempre precisa ser inicializada , caso contrari
 
 declaramos váriaveis com let tudo aquilo que possa muda, é possivel fazer sua redeclaração de valor e não precisa de um valor atribuido em um primeiro momento (undefined).
 
+# Escopos
+
+Dentro do Js temos 4 tipos de escopo, o local, global,bloco e alinhado(nested).
+
+Mas o que é escopo?
+
+Escopo é como acessamos Variaveis,objetos,funções em diferentes partes do código.
+
+<b>Global:</b>
+Escopo Global no Js é uma como se fosse uma unica caixa que podemos ver e acessar de qualquer lugar.
+
+<b>Bloco:</b>
+Todo o tipo de bloco cria um novo escopo, e por bloco queremos dizer qualquer estrutura que utilize chaves, como if, for, while e outras.
+
+```javascript:
+function foo () {
+  var name = 'Lucas'
+
+  if (name) {
+    // Aqui temos outro escopo
+    var age = 27
+  }
+
+  console.log(name) // Lucas
+  console.log(age) // 23
+}
+```
+
+por que quando criamos um escopo usando if não estamos sujeitos ao escopo da função superior?
+
+Escopos criados por funções são chamados de function scopes, enquanto escopos criados por estruturas de controle são chamados de block scopes.
+
+<b>Local:</b>
+
+Para o Local, podemos entender que tudo que esteja declarado entre { } vira local.
+
+Ou seja, uma vez declarado dentro de { } eu não consigo acessar fora dela.
+
+<b>Local entendemos por funçõe</b>
+
 # Conversao de tipos
 
 Podemos converter strings em numeros e boolean, numeros em strings e boolean em string e numeros.
@@ -52,70 +92,14 @@ True ou false é um tipo de dado, assim como string e numbers podemos fazer a co
 
 Ou seja se usarmos um valor zero em uma condicional, ela cairia no bloco do else, pois 0 == false.
 
-# Tipos de Operadores
+# Expressões e Operadores
 
-- atribuição
-- comparação
-- aritméticos
-- logicos
-- condicional
-
-# Operadores condicionais
-
-No js temos os operadores condicionais if e else;
-
-if(idade > 18) {
-se a condição (idade > 18) for verdadeira, executa algo
-} else {
-caso a condição seja falsa,executa outra ação.
-
-}
-
-variaveis criadas dentro de um bloco de codigo não pode ser acessada de fora dele.
-
-## ternario
-
-podemos trabalhar com condições utilizando o operador ternario.
-
-<b>Sintaxe:</b>
-
-```javascript:
-let age = 18;
-let podeBeber = age >=18 //condição ?
-console.log("pode beber") : console.log("não pode beber") // else
-```
-
-mas como funciona esse ternario?
-
-primeiros colocamos a condição ?
-caso seja verdadeira cai no primeiro console : caso seja falso, cai no segundo
-concole.
-
-## Switch
-
-Dentro dos operadores lógicos, tambem podemos usar o Switch que podemos usar para fazer "multiplas" condições,vamos ao exemplo.
-
-```javascript:
-let day = "monday";
-
-switch(day){
-  case "monday"
-    Console.log("dia de planejamento");
-    break
-  case "friday"
-    Console.log("dia de tomar  uma")
-  }
-```
-
-O que mais temos dentro do case?
-
-- Break
-- default
-
-O Break faz com que a execução pare no momento em que a condição for realizada,
-no nosso caso "monday" que vai executar "dia de planejamento".
-
-Já o Default, é um valor "padrão" que será apresentado caso nenhum das condição dentro do switch seja realizada.
+- Lógicos
+- Igualdade
+- Atribuição
+- Comparação
+- Aritméticos
+- Condicional-
 
 # Operadores lógicos
 
@@ -202,26 +186,6 @@ Já as declarações é um conjunto maior de código que sozinho não produz nen
 
 "Declarações é como se fossem um paragrafo em um texto e as expressões cada letra"
 
-# Arrays
-
-Arrays são listas que podem conter qualquer tipo de dados.
-
-Por padrão do JavaScript, arrays são objetos.
-
-Sintaxe:
-
-```javascript:
-let heroes = ["Batman", "Mulher gato", "iron main"];;
-```
-
-<b>Como os arrays são "acessados"?</b>
-
-No Array, assim como vimos em strings, usamos indices para acessar cada elemento de um array.
-
-No nosso exemplo acima,temos um array com 3 valores que vão do 0 - 2, mas como assim? não são 3 valores?
-
-No Js nossos indices começam do 0 em diante.
-
 # Fluxo de Controle
 
 # Loops
@@ -261,3 +225,80 @@ while(i<5){
   i++
 };
 ```
+
+# Operadores condicionais
+
+No js temos os operadores condicionais if e else;
+
+if(idade > 18) {
+se a condição (idade > 18) for verdadeira, executa algo
+} else {
+caso a condição seja falsa,executa outra ação.
+
+}
+
+<b>variaveis criadas dentro de um bloco de codigo não pode ser acessada de fora dele.</b>
+
+## ternario
+
+podemos trabalhar com condições utilizando o operador ternario.
+
+<b>Sintaxe:</b>
+
+```javascript:
+let age = 18;
+let podeBeber = age >=18 //condição ?
+console.log("pode beber") : console.log("não pode beber") // else
+```
+
+mas como funciona esse ternario?
+
+primeiros colocamos a condição ?
+caso seja verdadeira cai no primeiro console : caso seja falso, cai no segundo
+concole.
+
+## Switch
+
+Dentro dos operadores lógicos, tambem podemos usar o Switch que podemos usar para fazer "multiplas" condições,vamos ao exemplo.
+
+```javascript:
+let day = "monday";
+
+switch(day){
+  case "monday"
+    Console.log("dia de planejamento");
+    break
+  case "friday"
+    Console.log("dia de tomar  uma")
+  }
+```
+
+O que mais temos dentro do case?
+
+- Break
+- default
+
+O Break faz com que a execução pare no momento em que a condição for realizada,
+no nosso caso "monday" que vai executar "dia de planejamento".
+
+Já o Default, é um valor "padrão" que será apresentado caso nenhum das condição dentro do switch seja realizada.
+
+# Arrays
+
+Arrays são listas que podem conter qualquer tipo de dados.
+
+Por padrão do JavaScript, arrays são objetos.
+
+Sintaxe:
+
+```javascript:
+let heroes = ["Batman", "Mulher gato", "iron main"];;
+```
+
+<b>Como os arrays são "acessados"?</b>
+
+No Array, assim como vimos em strings, usamos indices para acessar cada elemento de um array.
+
+No nosso exemplo acima,temos um array com 3 valores que vão do 0 - 2, mas como assim? não são 3 valores?
+
+No Js nossos indices começam do 0 em diante.

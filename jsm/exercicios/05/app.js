@@ -57,3 +57,5 @@ const names = ["João Grilo", "Chicó", "Rosinha"];
 for (let teste of names) {
   console.log(teste);
 }
+
+console.log(teste);
