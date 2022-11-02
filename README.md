@@ -11,9 +11,16 @@ Dados primitivos são os tipo básico de cada linguagem, no Js temos os seguinte
 - Strings
 - Numbers
 - Boolean
-- Undefined
 - Null
+- Undefined
 - BigInt
+- SY mbol
+
+# Dados Objetos
+
+- Arrays
+- Functions
+- Objetos
 
 # Declaração de váriavel
 
@@ -302,3 +309,69 @@ No Array, assim como vimos em strings, usamos indices para acessar cada elemento
 No nosso exemplo acima,temos um array com 3 valores que vão do 0 - 2, mas como assim? não são 3 valores?
 
 No Js nossos indices começam do 0 em diante.
+
+# Funções
+
+<b> O que é uma função? </b>
+Funçoes são um bloco de código que podemos invocar(chamar)/usar quando quiser
+
+## sintaxe de uma função
+
+- (Function declaration)
+
+```javascript:
+function sayHI // criando a função () {
+console.log("Oi") // bloco de código da função
+}
+
+sayHi() // chamando/invocando a função;
+```
+
+- (Function expression)
+
+Function expression é quando declaramos uma função dentro de uma variavel.
+
+```javascript:
+ const showFood = function // criando a função () {
+console.log("Pizza") // bloco de código da função
+}
+
+showFood() // chamando/invocando a função;
+```
+
+## Qual a diferença entre uma function declaration para uma function expression?
+
+- Em uma function declaration, podemos chamar o função "antes" da função.
+
+```javascript:
+sayHi() // chamando/invocando a função;
+
+function sayHI // criando a função () {
+console.log("Oi") // bloco de código da função
+}
+
+```
+
+- Já em uma Function expression, não podemos invocar antes da variavel criada, pois da erro no js.
+
+```javascript:
+showFood() // chamando/invocando a função;
+ const showFood = function // criando a função () {
+console.log("Pizza") // bloco de código da função
+
+<b>ReferenceError: Cannot access 'showFood' before initialization</b>
+}
+
+```
+
+## Porque isso acontece?
+
+No JavaScript os Códigos são lidos de cima para baixo, e quando criamos uma função, ocorre o <b>Hoisting</b> que faz com que possamos invocar uma função antes que ela esteja declarada, que pos trás dos panos do JS, eleva nossa função para o topo da pagina (do código) e só depois le o que foi invocado (mesmo que a invocação esteja acima), o que não pode ser feito quando criamos uma variavel ou expression function.
+
+## Parametros e Argumentos
+
+- Parametros:
+  Quando criamos uma função, podemos atribuir parametros (aqui), que são variaveis locais (só podem ser usada dentro do escopo de função)
+
+- Argumentos
+  São os valores atribuidos aos Parametros/variavel local.
