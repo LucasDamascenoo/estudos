@@ -14,13 +14,44 @@ Dados primitivos são os tipo básico de cada linguagem, no Js temos os seguinte
 - Null
 - Undefined
 - BigInt
-- SY mbol
+- SYmbol
 
 # Dados Objetos
 
 - Arrays
 - Functions
 - Objetos
+
+# Referencia vs Value
+
+Qual a diferença entre valor e referencia?
+
+no js temos os dados primitivos(strings,boolean) e os de objeto(array,objetos,funções)
+
+os dados primitivos são imutaveis, pois são passados como valor, já nos objetos é por referencia, vamos aos exemplos.
+
+- Valor
+
+```javascript:
+let a = 11;
+let b = a;
+console.log(b);
+
+```
+
+Passamos para a Variavel b o valor da variavel a,mas o que acontece com a variavel a se mudarmos o valor de b? <b>Nada</b>
+
+Mas o mesmo não acontece com os tipos de dados objeto.
+
+```javascript:
+// já nos tipos de dados objetos  ao mudarmos um, altera a outra
+
+let name = { person: "LUcas" };
+let name2 = name;
+name2.person = "tati";
+console.log(name, name2);
+
+```
 
 # Declaração de váriavel
 
@@ -193,46 +224,6 @@ Já as declarações é um conjunto maior de código que sozinho não produz nen
 
 "Declarações é como se fossem um paragrafo em um texto e as expressões cada letra"
 
-# Fluxo de Controle
-
-# Loops
-
-Loops são uma repetição de código atrelada a uma certa condição que enquanto verdadeira executa algo repetidamente.
-
-<b>For</b>: Usamos for em casos que sabemos a quantidade de vezes que iremos repetir um certo código.
-
-<b>Exemplo:</b>:
-
-```javascript:
-for(let i = 0; i<10; i++){
-  console.log(i)
-};
-```
-
-No exemplo acima temos 3 caracteristica.
-
-- Inicializador
-- Condição
-- Incremento
-
-<b>Inicializador:</b>: é uma variavel criada para indicarmos qual é o nosso numero inicial.
-
-<b>Condição:</b>: é uma condição de parada, ou seja, enquanto essa condição for verdadeira ela roda o loop, assim que virar falsa, para o loop.
-
-<b>Incremento:</b>: adiciona um valor na nossa variavel iniciadora, toda "rodada" em que a nossa condição ainda é verdadeira, cada vez que o valor é incrementado,ocorre uma interação,no nosso caso ele vai iterar 10x.
-
-<b>While</b>: Usamos while em casos que não sabemos a quantidade de vezes que iremos repetir um certo código.
-
-<b>Exemplo:</b>:
-
-```javascript:
-let i = 0
-while(i<5){
-  console.log(i)
-  i++
-};
-```
-
 # Operadores condicionais
 
 No js temos os operadores condicionais if e else;
@@ -290,6 +281,46 @@ no nosso caso "monday" que vai executar "dia de planejamento".
 
 Já o Default, é um valor "padrão" que será apresentado caso nenhum das condição dentro do switch seja realizada.
 
+# Loops
+
+Loops são uma repetição de código atrelada a uma certa condição que enquanto verdadeira executa algo repetidamente.
+
+<b>For</b>: Usamos for em casos que sabemos a quantidade de vezes que iremos repetir um certo código.
+
+<b>Exemplo:</b>:
+
+```javascript:
+for(let i = 0; i<10; i++){
+  console.log(i)
+};
+```
+
+No exemplo acima temos 3 caracteristica.
+
+- Inicializador
+- Condição
+- Incremento
+
+<b>Inicializador:</b>: é uma variavel criada para indicarmos qual é o nosso numero inicial.
+
+<b>Condição:</b>: é uma condição de parada, ou seja, enquanto essa condição for verdadeira ela roda o loop, assim que virar falsa, para o loop.
+
+<b>Incremento:</b>: adiciona um valor na nossa variavel iniciadora, toda "rodada" em que a nossa condição ainda é verdadeira, cada vez que o valor é incrementado,ocorre uma interação,no nosso caso ele vai iterar 10x.
+
+<b>While</b>: Usamos while em casos que não sabemos a quantidade de vezes que iremos repetir um certo código.
+
+<b>Exemplo:</b>:
+
+```javascript:
+let i = 0
+while(i<5){
+  console.log(i)
+  i++
+};
+```
+
+# Tipos de Dados (Objetos):
+
 # Arrays
 
 Arrays são listas que podem conter qualquer tipo de dados.
@@ -313,7 +344,7 @@ No Js nossos indices começam do 0 em diante.
 # Funções
 
 <b> O que é uma função? </b>
-Funçoes são um bloco de código que podemos invocar(chamar)/usar quando quiser
+Funçoes são um bloco de código que executa uma determinada "acão" e que podemos invocar(chamar)/usar quando quiser
 
 ## sintaxe de uma função
 
@@ -375,3 +406,64 @@ No JavaScript os Códigos são lidos de cima para baixo, e quando criamos uma fu
 
 - Argumentos
   São os valores atribuidos aos Parametros/variavel local.
+
+## Return
+
+Return no Js, primeiro que "encerra" o ciclo daquela função, e tambem serve para "guardar" um determinado dado que pode ser usado fora daquela função, se a gente não retornar nada em uma função, quando guardamos essa função em uma variavel por exemplo, o valor sera <b>undefined</b>
+
+## Arrow Functions
+
+Arrow functions é uma forma abreviada de incluirmos uma função com a seguintes sintaxe.
+
+```javascript:
+const getName = (name) => {
+  return name
+}
+console.log(getname('Lucas'));
+
+```
+
+## Metodos
+
+Metodos em Js são "funções", mas tem uma caracteristica diferente ,enquanto funções é chamada/executada sozinha, metodos são "aplicadas" em objetos e tipos de dados/strings/arrays.
+
+- função
+
+```javascript:
+
+ const showFood = function // criando a função () {
+console.log("Pizza") // bloco de código da função
+
+}
+showFood() // chamando/invocando a função;
+```
+
+- Metodo
+
+```javascript:
+
+ const text = "Lucas Damasceno"
+
+const tamanho = text.toUpperCase() // metodo de string
+
+ saida : //LUCAS DAMASCENO
+```
+
+## Objetos
+
+é uma coleção de propriedades atribuidas por chave e valor.
+
+- Sintaxe
+
+```javascript:
+const carro = {
+  nome: 'gol',
+  cor: 'azul',
+  ano: 2009,
+  fabricante: 'fiat'
+
+}
+
+console.log(carro);
+
+```
