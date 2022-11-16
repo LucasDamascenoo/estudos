@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lógica de programação</title>
+</head>
+
+<body>
+  <h1>Foco</h1>
+
+
+  <script>
+
+    let jogador1 = Number(prompt("JOgador 1, digite seu numero"));
+    let jogador2 = Number(prompt("JOgador 2, digite seu numero"));
+
+
+    if (jogador1 === jogador2) {
+      alert(`Jogador 1 ${jogador1} Jogador 2 ${jogador2}... seus numeros são iguais, fim de jogo!: `)
+    } else {
+      let random = Math.floor(Math.random() * 2);
+
+      if (random === 0) {
+        if (jogador1 < jogador2) {
+          alert("ganhou o jogador1")
+        } else {
+          alert("ganhou o jogador 2")
+        }
+      } else {
+        if (jogador1 > jogador2) {
+          alert("ganhou o jogador 1")
+        } else {
+          alert("ganhou o jogador 2")
+        }
+      }
+    }
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

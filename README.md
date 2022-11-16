@@ -1,6 +1,6 @@
-# algoritimos-logicaDeProgramacao
+# algoritimos-logica-DeProgramacao
 
-repositório criado para desenvolvimento de atividades da matéria de Algoritmos .
+repositório criado para estudos e desenvolvimento de logica de programação.
 
 # JavaScript
 
@@ -78,7 +78,7 @@ Escopo é como acessamos Variaveis,objetos,funções em diferentes partes do có
 Escopo Global no Js é uma como se fosse uma unica caixa que podemos ver e acessar de qualquer lugar.
 
 <b>Bloco:</b>
-Todo o tipo de bloco cria um novo escopo, e por bloco queremos dizer qualquer estrutura que utilize chaves, como if, for, while e outras.
+Todo o tipo de bloco cria um novo escopo, e por bloco queremos dizer qualquer estrutura que utilize chaves, como if, for, while,funções e outras.
 
 ```javascript:
 function foo () {
@@ -103,6 +103,8 @@ Escopos criados por funções são chamados de function scopes, enquanto escopos
 Para o Local, podemos entender que tudo que esteja declarado entre { } vira local.
 
 Ou seja, uma vez declarado dentro de { } eu não consigo acessar fora dela.
+
+Dentro de um escopo local, podemos incluir variaveis globais, mas caso tenhamos uma variavel local vs uma global com o mesmo nome, a variavel local irá ganhar.
 
 <b>Local entendemos por funçõe</b>
 
