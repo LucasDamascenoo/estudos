@@ -451,6 +451,38 @@ const tamanho = text.toUpperCase() // metodo de string
  saida : //LUCAS DAMASCENO
 ```
 
+## forEach e Callbacks
+
+foreach é um metodo de array que faz com que a iteração do array seja mais "facil".
+
+```javascript:
+
+const array = ['a','b','c']
+
+array.forEach((a,b,c) =>){
+  console.log(a,b,c)
+}
+
+```
+
+**_O que esta acontecendo nesse exemplo?_**
+
+com o Metodo foreach, estamos iterando cada item do array e imprimindo no console.
+
+Vamos a sinxtaxe :
+
+array.forEach () <= estamos chamando o metodo para o array / variavel que queremos iterar
+
+(function(a,b,c) {}) <= estamos criando uma função dentro do metodo, com 3 parametros.
+
+- a : é para trazer o item/nome que queremos trazer (obrigatorio)
+- b : é o indice de cada item iterado [1,2,3]
+- c : é a estrutura do array que estamos iterando ['a','b','c']
+
+# Callbacks.
+
+Callbacks são funções que são passadas para outra função como parametro.
+
 ## Objetos
 
 é uma coleção de propriedades atribuidas por chave e valor.
