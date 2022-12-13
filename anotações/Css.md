@@ -204,7 +204,151 @@ Obs: Aceita altura e largura
 
 Une os dos display anterior, mantem os elementos um ao lado do outro mas agora aceitando as caracteristicas de block, onde podemos setar altura e largura.
 
-## unidades de medidas
+# Flex-box
+
+O que é?
+
+Flexbox é um metodo que nos ajuda organizar elementos em uma unica direção (horizontal ou vertical), controlar suas dimensões, alinhamentos, ordem de aparecimento e muito mais, para isso precisamos ao menos de 2 elementos, um pai chamando **_flex container_** e por ultimo o filho chamado **_flex item_**.
+
+**_obs:_** Apenas os filhos diretos do container são afetados. Filhos dos flex-itens não são afetados.
+
+## Terminologia
+
+Quando usamos flex transformamos esses elementos de algumas formas.
+
+- Flex-container
+
+A partir do momento que usamos o flex-box o elemento principal vira um Flex-container (pai dos demais itens)
+
+- Flex-items
+
+São os filhos diretos do flex-container, os flex itens são bases em flex-diretions (linhas e colunas) que são nomeados como : main axis (eixo-principal : horizontal) e temos o cross axis (eixo-secundario: vertical).
+
+![terminologia-flexbox](/anota%C3%A7%C3%B5es/imagens/terminologia-flex.png).
+
+## Grid substitui o Flex-box?
+
+A resposta é NÃO, cada um dessas funcionalinadides fazer umn layout diferente do outro.
+
+- 1: Grid faz coisas que com o flex não é possivel
+- 2: Flexbox faz coisas que com o grid não é possivel
+- 3: Podem (e devem) ser usadas juntas!
+
+O que podemos fazer com grid e com Flex não?
+
+**Flexbox**
+
+- Flexbox é unidimensional (coluna ou linha).
+- O contéudo que dita o compartamento.
+- Distribuição dos espaços via conteudo
+- Melhor para movimentação de elementos UI.
+
+**Grid**
+
+- Grid é bidimensional (coluna e linha)
+- A definição do Grid que dita o layout
+- O espaço é determinado (porções)
+- Uso para Layouts Mais completos
+- Requer menos media queries
+
+- Display:flex
+
+Seta que a elementos aplicada podera receber as caracteristicas do flexbox.
+
+## Flex-direction
+
+Flex direction nos permite mudar a direção dos itens conforme o eixo.
+
+- row
+
+Por padrão ao setarmos flex já trabalhamos com no main axis (horinzontal) que por trás do panos é o row.
+
+```css:
+
+.container {
+display:flex;
+flex-diretion:row;
+flex-diretion:row-reverse;
+
+}
+
+```
+
+- Column
+
+Ao utilizarmos o colummns mudamos o eixo que iremos trabalhar (cross axis) e passamos a dispor os elementos como colunas (um embaixo do outro) como já estamos acostumados trabalhando com elementos blocks.
+
+```css:
+
+.container {
+display:flex;
+flex-diretion:column;
+flex-diretion:column-reverse;
+
+}
+
+```
+
+![flex-direction](/anota%C3%A7%C3%B5es/imagens/flex-direction.svg)
+
+## O que acontece quando o espaço dos itens for maior que o container?
+
+Utilizando flex temos uma propriedade que nos permite controle em situações como a da pergunta.
+
+- Flex-wrap
+
+Flex wrap (quebra) a linha quando os itens começa a ultrapassar a largura do container(pai)
+
+```css:
+
+.container {
+display:flex;
+flex-wrap:wrap;
+flex-wrap:wrap-reverse;
+flex-wrap:nowrap;
+}
+
+```
+
+**_obs:_** Por padrão essa propriedade é nowrap, ou seja, vai permitir o overflow (quando os elementos passam da largura definida/padrão, gerando um scroll lateral).
+
+- flex-flow
+
+Flex-direction e flex-wrap quando estamos falando em manipulação do flexcontainer são as mais importantes, por isso elas tem uma forma abreviada, onde podemos manipular tanto a direção quanto o wrap em uma unica linha.
+
+```css:
+.container {
+display:flex;
+flex-flow:row wrap
+/* primeiro definimos a direção e em seguida o wrap */
+}
+```
+
+![flex-wrap](/anota%C3%A7%C3%B5es/imagens/flex-wrap.svg)
+
+# Alinhamento com Flexbox
+
+Flexbox é uma maneira poderosa de alinhar nossos elementos na tela, com isso temos algumas formas de fazer isso.
+
+- Justify-content
+
+Alinha os alementos no main axis (horizontal) quando estamos usando row como flex-diretion.
+
+![justify-content](/anota%C3%A7%C3%B5es/imagens/justify-content.png)
+
+- Align Itens
+
+Alinha os elementos no cross axis (vertical) quando estamos usando column como flex-diretion.
+
+![justify-content](/anota%C3%A7%C3%B5es/imagens/align-items.svg)
+
+- Align-content
+
+Usamos mais quando nosso layout tem mais de uma linha.
+
+![align-content](/anota%C3%A7%C3%B5es/imagens/align-content.svg)
+
+# Unidades de medidas
 
 unidades de medidas no css, é como setamos tamanhos, seja de font, de altura, largura e essas medidas ajudam ou atrapalham na hora de deixa um site responsivo e vamos conhecer seus tipos e unidades.
 
