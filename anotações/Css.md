@@ -348,6 +348,70 @@ Usamos mais quando nosso layout tem mais de uma linha.
 
 ![align-content](/anota%C3%A7%C3%B5es/imagens/align-content.svg)
 
+- Order
+
+Com a propriedade orderm, conseguimos mudar a ordem do item(filho).
+
+![order](/anota%C3%A7%C3%B5es/imagens/order.svg)
+
+- Align-self
+
+Com o align-self conseguimos mudar o posicionamento invidual de cada filho.
+
+![align-self](/anota%C3%A7%C3%B5es/imagens/align-self.svg)
+
+- Flex-grow
+
+Com o flex-grow podemos distruibuir o espaço que sobrou do container para os demais itens.
+
+Por padrão a propriedade é 0 (não tem a distribuição) ao incluirmos flex:1, ele divide igualmente o espaço que sobrou para todos os itens.
+
+Podemos usar essa propriedade para criar colunas iguais, mesmo com conteudos diferentes.
+
+![flex-grow](/anota%C3%A7%C3%B5es/imagens/flex-grow.svg)
+
+- Flex-shrink
+
+É a capacidade dos itens diminuirem quando não tem espaço disponivel.
+
+O valor padrão do Shrink é 1 (já diminui/adapta por padrão).
+
+Se nosso container tiver 400px e nada item tiver 150px (4x150 = 600px), com o shrink 1, os itens vão se adpatar dentro do container e não vai haver o overflow.
+
+- Flex-basics
+
+  Define o tamanho inicial de um flex-itens .
+  É a melhor maneira de definir largura e altura para um flex-item.
+
+  Por padrão o basics é auto, ou seja, o tamanho é definido pelo conteudo.
+
+- Flex
+
+Esta é a propriedade shorthand para flex-grow, flex-shrink e flex-basis, combinadas. O segundo e terceiro parâmetros (flex-shrink e flex-basis) são opcionais.
+
+Por padrão o flex é definido da seguinte forma: 0 1 auto (0 para grow 1 para shrink e auto para basics).
+
+## Content e Items
+
+As propriedades que aprendemos acima,modificam o content (pai) e os items(items) abaixo segue as propriedades "exclusivas" para o content e para os items.
+
+**_content_**
+
+- Justify-content (main axis)
+- Flex-direction
+- Flex-Wrap
+- Flex-flow (flex-direction e flex-wrap)
+- Align-Items (cross axis)
+- Gap (espaçamento entre os items)
+
+**_Items_**
+
+- flex-basics
+- flex-grow
+- flex-shrink
+- flex (grow shrink basics)
+- order
+
 # Unidades de medidas
 
 unidades de medidas no css, é como setamos tamanhos, seja de font, de altura, largura e essas medidas ajudam ou atrapalham na hora de deixa um site responsivo e vamos conhecer seus tipos e unidades.
