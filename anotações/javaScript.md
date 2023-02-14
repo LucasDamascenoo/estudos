@@ -347,6 +347,23 @@ No nosso exemplo acima,temos um array com 3 valores que vão do 0 - 2, mas como 
 
 No Js nossos indices começam do 0 em diante.
 
+# Objetos
+
+Objetos é uma coleçao de dados separados por chave: e valor;
+
+```javascript:
+const produto = { nome: "monitor 27", preco: 1900, estoque: true };
+```
+
+## Como acessamos os valores de um objetos?
+
+Nos objetos tem a sintaxe de ponto(.)
+
+```javascript:
+const produto = { nome: "monitor 27", preco: 1900, estoque: true };
+console.log(produto.nome) // trazendo/acessando somento o nome do produto
+```
+
 # Funções
 
 <b> O que é uma função? </b>
