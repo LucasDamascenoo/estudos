@@ -321,11 +321,105 @@ while(i<5){
 
 # Tipos de Dados (Objetos):
 
+# Objetos
+
+é uma coleção de propriedades atribuidas por propriedades/chaves : valor, que nos possibilita criar estruturas de dados onde poderemos utilizar em nossas aplicações.
+
+- Sintaxe
+
+```javascript:
+const carro = {
+  nome: 'gol',
+  cor: 'azul',
+  ano: 2009,
+  fabricante: 'fiat'
+
+}
+
+console.log(carro);
+
+```
+
+## Como acessamos os valores de um objetos?
+
+Nos objetos tem a sintaxe de ponto(.), onde passamos o nome do objeto.propriedade que queremos ter acesso.
+
+```javascript:
+const produto = { nome: "monitor 27", preco: 1900, estoque: true };
+console.log(produto.nome) // trazendo/acessando somento o nome do produto
+
+```
+
+## adicionando e removendo propriedades de um objeto
+
+## Spread operator
+
+Podemos unir dois objetos em um só usando o ... (spread operador).
+
+```javascript:
+const user1 = {  name: "lucas",  age: 27,  peso: 90,};
+
+const complemento = {  cor: "negro",  olhos: "castanhos",  tamanho: 1.7,};
+
+const fullUser = { ...user1, ...complemento };
+
+console.log(fullUser);
+
+/*
+ name: 'lucas',
+  age: 27,
+  peso: 90,
+  cor: 'negro',
+  olhos: 'castanhos',
+  tamanho: 1.7
+
+  */
+
+```
+
+## This
+
+Em objetos, podemos utilizar a palava referenciada <b>This</b>, mas o que ela faz?
+
+This: é o contexto atual onde evidencia que o método(Proprieades que são uma função) que estamos chamando na função é daquele objeto.
+
+**_ Note que não precisamos passar para o parametro o ano de nascimento, e dentro da função usamos o this.calcAge, para "evidenciar" que o calcAge que estamos usando é referente ao objeto "Lucas" . _**
+
+```javascript:
+const lucas = {
+  name: "lucas",
+  anoNascimento: 1995,
+  role: "Student and datascience",
+  status: "need more practice",
+  calcAge: function () {
+    return 2023 - this.anoNascimento;
+  },
+};
+
+console.log(lucas.calcAge());
+
+```
+
+**_ Já no exemplo abaixo, precisamos criar um parametro e ele não consegue ler o ano de nascimento que está dentro do objeto "Lucas", fazendo com que precisemos passar o ano como argumento, o que faz com que o código se repita. _**
+
+```javascript:
+const lucas = {
+  name: "lucas",
+  anoNascimento: 1995,
+  role: "Student and datascience",
+  status: "need more practice",
+  calcAge: function (anoNascimento) {
+    return 2023 - anoNascimento;
+  },
+};
+
+console.log(lucas.calcAge(1995));
+
+```
+
 # Arrays
 
-Arrays são listas que podem conter qualquer tipo de dados.
-
-Por padrão do JavaScript, arrays são objetos.
+Arrays são listas de dados que podem conter qualquer tipo de dados (Por padrão, devemos manter o array com o mesmo tipo de dados).
 
 Sintaxe:
 
@@ -347,22 +441,157 @@ No nosso exemplo acima,temos um array com 3 valores que vão do 0 - 2, mas como 
 
 No Js nossos indices começam do 0 em diante.
 
-# Objetos
+## Adicionando/removendo elementos em um array
 
-Objetos é uma coleçao de dados separados por chave: e valor;
+Podemos fazer alterações em nossos arrays, seja adicionando ou removendo informações dele atráves de métodos.
 
-```javascript:
-const produto = { nome: "monitor 27", preco: 1900, estoque: true };
-```
+## Adicionando
 
-## Como acessamos os valores de um objetos?
+- push()
 
-Nos objetos tem a sintaxe de ponto(.)
+O Método push() adiciona elementos no fim do array.
 
 ```javascript:
-const produto = { nome: "monitor 27", preco: 1900, estoque: true };
-console.log(produto.nome) // trazendo/acessando somento o nome do produto
+const familia = ["Bruce", "Tati", "Lucas", "Dona Lucia"];
+
+familia.push("seu  mazinho", "Mariele", "nana", "Matheus", "Mãe", "Thiago");
 ```
+
+- unshift()
+
+Já o Método unshift() adiciona elementos no inicio do array.
+
+```javascript:
+const familia = ["Bruce", "Tati", "Lucas", "Dona Lucia"];
+
+familia.unshift("Estrelinha");
+```
+
+- Spread Operator
+
+Tambem podemos adicionar um array em outro array de forma **declarativa** usando o spread operator(...)
+
+```javascript:
+const familiaOliveira = [...familia, "Zé", "Maria"];
+
+console.log(familiaOliveira);
+
+
+```
+
+No exemplo acima, "copiamos" o array familia para o novo array, e adicionamos mais valores.
+
+- slice()
+
+**Não Altera o array original**
+
+O Método slice() seleciona elementos atráves de dois parametros.
+
+- 1º parametro :
+
+indica qual o inicio (qual o indice eu quero pegar do array).
+
+- 2º parametro:
+
+indica até qual indice eu quero que pare meu array.
+
+```javascript:
+const n = ["maria", "joana", "teste", "tati"];;
+
+numeros.slice(1, 3);
+
+//return joana , teste
+
+```
+
+**Explicação:** No exemplo acima, no primeiro parametro falamos que queremos selecionar o indice 1(Joana), em seguida no segundo parametro informamos que queremos que pare no elemento 3 (teste)
+
+## Removendo
+
+- pop()
+
+O Método pop() remove elementos no fim do array.
+
+```javascript:
+const familia = ["Bruce", "Tati", "Lucas", "Dona Lucia"];
+
+familia.pop();
+```
+
+- shift()
+
+O Método shift() remove elementos no fim do array.
+
+```javascript:
+const familia = ["Bruce", "Tati", "Lucas", "Dona Lucia"];
+
+familia.shift();
+```
+
+## Desestruturação de Arrays
+
+Podemos atribuir os valores do array em váriaveis individuais.
+
+- Sintáxe
+
+```javascript:
+const heroes = ["Batman", "Mulher gato", "Pinguin", "coringa"];
+
+// desestruturação
+
+const [homemMorcego, gata] = heroes;
+
+// homemMorcego = "Batman"
+//gata = "Mulher gata"
+
+```
+
+atribuimos váriaveis de apenas dois valores do nosso array, respeitando o indice 0 para primeira váriavel e o indice 1 para a segunda váriavel.
+
+- Pulando valores do arrays
+
+Tambem é possivel criar váriaveis, pulando algum determinado valor do array.
+
+```javascript:
+const heroes = ["Batman", "Mulher gato", "Pinguin", "coringa"];
+
+// desestruturação
+
+const [, , homemPinguim] = heroes;
+
+// homemPinguim = "Pinguin"
+
+```
+
+No exemplo acima, pulamos os valores "Batman" e "Mulher gato" e atribuimos a váriavel apenas o terceiro valor.
+
+- splice()
+
+**Altera o array original**
+
+O Método splice() remove elementos atráves de dois parametros.
+
+- 1º parametro :
+
+indica qual o elemento quero remover primeiro
+
+- 2º parametro:
+
+indica quantos elementos quero remover com base no primeiro parametro.
+
+```javascript:
+const numeros = [10, 20, 30, 40, 50, 60, 70];
+
+numeros.slice(0, 4);
+
+// numeros excluidos : [10, 20, 30, 40]
+
+
+// array atualmente: [(50, 60, 70)]
+
+```
+
+**Explicação:** No exemplo acima, no primeiro parametro falamos que queremos selecionar a partir do indice 0(10), em seguida no segundo parametro informamos quantos indices queremos deletar a partir do primeiro index , com isso deletamos os numeros [10,20,30,40] , e ficou apenas os valors [50,60,70]
 
 # Funções
 
@@ -525,21 +754,84 @@ isso é um callback.
 
 Clusures em js, são funções que idenpendente da onde for chamada, vai respeitar o valor passado para essas funções.
 
-## Objetos
+# Manipulação da Dom
 
-é uma coleção de propriedades atribuidas por chave e valor.
+## O que é a DOM?
 
-- Sintaxe
+a sigla DOM (Document objet model) é a estrutura/representação do HTML como conhemos, e usamos o Javascript para manipular, criar e estilizar esse elementos.
+
+A estrutura da DOM é feita como se fosse uma arvore (onde cada elemento do html) é um nó(node).
+
+<b>Importante!</b>Os métodos e as propriedades da DOM não é Javascript, mas usamos o Javascipt para acessar essas propriedades e métodos através da WEB API.
+
+## Como selecionar os elementos do HTML.
+
+Podemos selecionar os elementos do HTML via Js de algumas formas.
+
+- Via Tags
 
 ```javascript:
-const carro = {
-  nome: 'gol',
-  cor: 'azul',
-  ano: 2009,
-  fabricante: 'fiat'
 
-}
-
-console.log(carro);
+ const tag = document.getElementsByTagName("h5");
 
 ```
+
+- Via Id / classes
+
+```javascript:
+
+ const h1 = document.getElementById("text");
+ const h2 = document.getElementsByClassName("texto");
+
+```
+
+Tambem podemos fazer essa seleção de forma mais "moderna", usando querySelector e querySelectorAll, vamos entender as diferenças entre eles.
+
+- document.querySelector()
+
+Com o querySelector podemos pegar qualquer tipo de elementos do HTML, seja por nome da tag, id e classes.
+
+**retorna somente o primeiro elemento**: caso tenha mais de uma class igual, vai retornar somente o primeiro elemento (top - down), caso não encontre nenhuma informação o retorno será **null**
+
+```javascript:
+
+const result = document.querySelector("#result");
+
+result.style.backgroundColor = "blue";
+
+```
+
+- document.querySelectorAll()
+
+QuerySelectorAll pega todos os elementos apontado , seja ele tag, id ou classe.
+
+**retorna um array** : como querySelectorAll podemos fazer iterações de array como o forEach fazendo com que possamos modificar diversos elementos.
+
+```javascript:
+
+const list = document.querySelectorAll(".special");
+
+list.forEach((item) => {
+  console.log(item);
+  item.style.color = "red";
+});
+
+```
+
+## Como criar elementos com o DOM
+
+Atráves do Js podemos criar elementos/atributos dinamicamente utilizando o método CreateElement() .
+
+```javascript:
+const div = document.createElement("div");
+
+div.innerHTML = "eae";
+
+document.body.appendChild(div);
+
+
+```
+
+**Explicação:** Usamos o creatElement para criar uma div, atribuimos com o innerHTML uma string e por ultímo atribuimos a div sendo filho do body com o método appendChild().
+
+Criar um elemento não garante que ele vai de cara aparecer em nosso HTML, somente na "memória" para isso precisamos usar outro método para que nossa página receba esse elemento.

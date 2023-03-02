@@ -455,7 +455,7 @@ max e min-width define o "limite" que um determinado elemento vai crescer ou dim
 
 - max
 
-Enquanto a largura definida for menor que a definida o conteudo cresce, apos isso ele para.
+Se a largura for de 0 até 350px por exemplo a regra aplicada sera definida.
 
 - min
 
@@ -468,6 +468,22 @@ Enquanto a largura definida for maior maior o conteudo cresce, ao chegar no dete
 - width : em ou %
 
 # Pensando responsividamente
+
+## Media Queries
+
+Podemos dizer que Media Queries são o IF do JavaScript, enquanto a condição aplicada for verdadeira o estilo será aplicado.
+
+```css:
+@media (max-width: 350px) {
+  .small-only {
+    color: red;
+  }
+}
+```
+
+## max-width e min-width
+
+São propriedades usada para determinar a regra para telas maiores (min-width) ou para telas menores (max-width).
 
 ## Arquitetura Css
 
