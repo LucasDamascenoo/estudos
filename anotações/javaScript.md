@@ -835,3 +835,173 @@ document.body.appendChild(div);
 **Explicação:** Usamos o creatElement para criar uma div, atribuimos com o innerHTML uma string e por ultímo atribuimos a div sendo filho do body com o método appendChild().
 
 Criar um elemento não garante que ele vai de cara aparecer em nosso HTML, somente na "memória" para isso precisamos usar outro método para que nossa página receba esse elemento.
+
+- appendChild()
+
+Adiciona elementos criados atráves do createElement e faz com que possamos incluir o conteudo em um "pai", seja ele o body, uma div já existente.
+
+- innerHtml
+
+Adiciona texto nas nossas pagimas mas aceita elementos html.
+
+```javascript:
+const div = document.createElement("div");
+
+div.innerHTML = "<strong>eae</strong>";
+```
+
+- innerText
+
+Adiciona texto nas nossas pagimas mas não aceita elementos html, somente texto.
+
+```javascript:
+const div = document.createElement("div");
+
+div.innerText = "eae";
+```
+
+- textContent
+
+semelhante ao innerText, o textContent retorna apenas textos em nosso HTML.
+
+```javascript:
+const div = document.createElement("div");
+
+div.textContent = "eae";
+```
+
+## Selecionando e modificando/adicionando atributos
+
+Podemos selecionar um atributo existente (src,href,class,ids) ou cria-los atraves do javascript utilizando **getAttribute** e o **setAttribute()**
+
+- Selecionando atributos
+
+```Javascript:
+
+   const classValue = links.getAttribute('class')
+   const showLink = link.getAttribute('href')
+
+    console.log(classValue); // first
+    console.log(ShowLink); // first.html
+
+```
+
+- Atribuindo elementos
+
+quando utilizamos o setAttibute, passamos dois parametros:
+
+1 - o tipo de elementos que vamos criar
+2 - o nome que vamos atribuir a esse elemento
+
+```html:
+
+  <ul>
+    <li class="first">i have class of first</li>
+    <a href="first.html" id="link">random link</a>
+    <li> i have no attribute</li>
+  </ul>
+
+```
+
+```Javascript:
+
+   const link = document.querySelector('#link')
+
+   const last = link.nextElementSibling;
+
+   last.setAttribute("class",'fisrt')
+
+```
+
+## Manipulando Classes
+
+Podemos adicionar, remover, substituir e verificar se existem classes atráves de duas funções className e classList.
+
+- className
+
+```Javascript:
+
+   const second = document.querySelector('.second')
+
+    const verificaClasse = second.className;
+
+    console.log(verificaClasse); //second
+```
+
+No código acima estamos trazendo a o nome da classe que está atribuido em nosso elemento HTML.
+
+```Javascript:
+
+   const second = document.querySelector('.second')
+
+    second.className = 'pink';
+
+    console.log(verificaClasse);
+    // era second e agora pink
+```
+
+Tambem é possivel modificar o valor de uma class com className.
+**caso tenha classe atribuida em um determinado elemento, essa classe é substituida**
+
+- ClassList
+
+Utilizando o classList temos parametros que nos ajudam a manipular essas listas com mais facilidade.
+
+- classList.add
+  adicionar uma classe em um determinado elemento
+
+  - classList.remove
+    remove uma classe de um determinado elemento
+
+- classList.contains
+  verifica se o determinado elemento contem aquela class.
+
+## como remover elementos do HTML com o DOM
+
+1º vamos selecionar o elemento.
+
+```Javascript:
+
+   const second = document.querySelector('.second')
+
+
+```
+
+2º em seguida podemos remover o elemento que foi selecionado.
+
+```Javascript:
+
+   second.remove()
+
+
+```
+
+## Eventos
+
+Eventos são maneiras de que o DOM "escuta" uma determinada ação do usuario, como click, scroll entre outras.
+
+## Evento de click
+
+Eventos de click ocorre quando clicamos em algum elemento da pagina.
+
+```Javascript:
+
+    const btn = document.querySelector('.btn');
+    const heading = document.querySelector('h1')
+
+
+
+    //qual evento // o que vamos fazer (callback function)
+    btn.addEventListener('click', () => {
+      heading.classList.add('red')
+
+    })
+
+
+```
+
+**Explicação:**
+
+1º precisamos selecionar o elemento que vamos adicionar o evento, no caso acima, o botão.
+2º em seguida passamos o parametro addEventListener para o elemento selecionado.
+3º por padrão o evento recebem 2 parametros, primeiro o tipo de evento que vamos "ouvir" e em seguida o que queremos fazer quando o determinado evento for chamado **o segundo parametro é uma callback function**.
