@@ -12,4 +12,4 @@ Arrays nos ajuda a guardar multiplos valores em uma unica váriavel, fazendo com
 
 ## Notação Big-o
 
-é usado para "medir" o desempenho de um algoritmo de acordo com o tempo que ele demorara para executar. Normalmente fazendo a comparação utilizando tempo, mas como diz o ditado, "o tempo é relativo", se executar um código na minha maquina com x configuração, pode (e vai) demorar um tempo diferente da sua maquina ou quando exercurtamos novamente, por isso medir via "tempo" não é uma boa idea.
+é usado para "medir" o desempenho de um algoritmo de acordo com o tempo que ele demora para executar. Normalmente fazendo a comparação utilizando tempo, mas como diz o ditado, "o tempo é relativo", se executar um código na minha maquina com x configuração, pode (e vai) demorar um tempo diferente da sua maquina ou quando exercurtamos novamente, por isso medir via "tempo" não é uma boa idea.

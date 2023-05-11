@@ -319,6 +319,68 @@ while(i<5){
 };
 ```
 
+**for of** : Outra maneira mais pratica de iterar sobre arrays,objetos,strings é usando o for of.
+
+```javascript:
+const items = ["book", "table", "chair", "kite"];
+
+for (let item of items) {
+  console.log(item);
+}
+
+```
+
+**forEach()**
+
+Iterar sobre um sem retornar nenhum valor, como fazemos com for, for of.
+
+Vamos a sinxtaxe :
+
+```javascript:
+const social = ["tt", "linkdlin", "facebook", "instagram"];
+
+social.forEach((e, b) => {
+  console.log(e, b);
+});
+
+```
+
+array.forEach () <= estamos chamando o metodo para o array / variavel que queremos iterar
+
+(function(a,b,c) {}) <= estamos criando uma função dentro do metodo, com 3 parametros.
+
+- a : é para trazer o item/nome que queremos trazer (obrigatorio)
+- b : é o indice de cada item iterado [1,2,3]
+- c : é a estrutura do array que estamos iterando ['a','b','c']
+
+**filter()**
+
+Filter é outro método de loop para arrays, mas ao contrarios do forEach, filter retorna valores.
+
+O retorno de um filter sempre vai ser o que for "true" e retorna um novo array.
+
+```javascript:
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14];
+
+const par = numbers.filter((number) => {
+  return number % 2 === 0;
+});
+
+```
+
+**map()**
+
+Map é outro método de array, que retornar/itera um novo array, mas com esse método podemos retornar valores modificados.
+
+```javascript:
+const as = [1, 4, 9, 16];
+
+const asw = as.map((e) => {
+  return e * 3;
+});
+
+```
+
 # Tipos de Dados (Objetos):
 
 # Objetos
@@ -417,6 +479,31 @@ console.log(lucas.calcAge(1995));
 
 ```
 
+## Desestruturação de Objetos
+
+Assim como veremos logo a seguir com os arrays, é possivel fazer desestruturação com objetos, mas o que é desestruturação?
+
+**é a capacidade de criar variaveis com as chaves dos objetos**
+
+```javascript:
+const lucas = {
+  name: "lucas",
+  anoNascimento: 1995,
+  role: "Student and datascience",
+  status: "need more practice",
+  calcAge: function (anoNascimento) {
+    return 2023 - anoNascimento;
+  },
+};
+
+
+const { name , anoNascimento} = lucas;
+
+console.log(name,anoNascimento)
+
+//Lucas , 1995
+```
+
 # Arrays
 
 Arrays são listas de dados que podem conter qualquer tipo de dados (Por padrão, devemos manter o array com o mesmo tipo de dados).
@@ -465,6 +552,23 @@ Já o Método unshift() adiciona elementos no inicio do array.
 const familia = ["Bruce", "Tati", "Lucas", "Dona Lucia"];
 
 familia.unshift("Estrelinha");
+
+```
+
+- Concat
+
+Concat é um método de array que "junta" diferentes arrays em um unico.
+
+```javascript:
+const frutas = ["Maça", "pera", "Laranja"];
+const sucos = ['Uva','Limao']
+
+const frutasEsucos = frutas.concat(sucos)
+
+console.log(frutasEsucos)
+
+// ["Maça", "pera", "Laranja",'Uva','Limao']
+
 ```
 
 - Spread Operator
@@ -475,6 +579,8 @@ Tambem podemos adicionar um array em outro array de forma **declarativa** usando
 const familiaOliveira = [...familia, "Zé", "Maria"];
 
 console.log(familiaOliveira);
+
+//["Bruce", "Tati", "Lucas", "Dona Lucia","zé","Maria]
 
 
 ```
@@ -504,7 +610,7 @@ numeros.slice(1, 3);
 
 ```
 
-**Explicação:** No exemplo acima, no primeiro parametro falamos que queremos selecionar o indice 1(Joana), em seguida no segundo parametro informamos que queremos que pare no elemento 3 (teste)
+**Explicação:** No exemplo acima, no primeiro parametro falamos que queremos selecionar o indice 1(Joana), em seguida no segundo parametro informamos que queremos que pare no antes do elemento 3 (teste)
 
 ## Removendo
 
@@ -762,7 +868,20 @@ a sigla DOM (Document objet model) é a estrutura/representação do HTML como c
 
 A estrutura da DOM é feita como se fosse uma arvore (onde cada elemento do html) é um nó(node).
 
+![Dom](./imagens/Dom.png)
+
 <b>Importante!</b>Os métodos e as propriedades da DOM não é Javascript, mas usamos o Javascipt para acessar essas propriedades e métodos através da WEB API.
+
+## Document
+
+Mas Afinal o que é o document?
+
+document é um "objeto" do DOM que representa toda a página do HTML, na qual podemos atribuir atributos para visualizar determinada parte do HTML.
+
+document.body
+document.title
+
+- Children
 
 ## Como selecionar os elementos do HTML.
 
@@ -805,7 +924,7 @@ result.style.backgroundColor = "blue";
 
 QuerySelectorAll pega todos os elementos apontado , seja ele tag, id ou classe.
 
-**retorna um array** : como querySelectorAll podemos fazer iterações de array como o forEach fazendo com que possamos modificar diversos elementos.
+**retorna um array** : como querySelectorAll podemos fazer iterações de array com o forEach fazendo com que possamos modificar diversos elementos.
 
 ```javascript:
 
@@ -1005,3 +1124,73 @@ Eventos de click ocorre quando clicamos em algum elemento da pagina.
 1º precisamos selecionar o elemento que vamos adicionar o evento, no caso acima, o botão.
 2º em seguida passamos o parametro addEventListener para o elemento selecionado.
 3º por padrão o evento recebem 2 parametros, primeiro o tipo de evento que vamos "ouvir" e em seguida o que queremos fazer quando o determinado evento for chamado **o segundo parametro é uma callback function**.
+
+## Eventos do Mouse
+
+Podemos manipular elementos conforme a ação do mouse.
+
+- mousedown
+- mouseup
+- mouseenter
+- mouseleave
+
+## Bubbling
+
+# Trabalhando com API's
+
+## Métodos HTTP
+
+- Get
+  Responsavel por "pegar" / ler os dados de uma determinada requisição.
+  Quando estamos trabalhando com api, te
+
+- Post
+
+Responsavel por enviar/criar dados.
+
+- CRUD
+
+Crud é uma abreviação de (Create,read,update e delete), mas qual método faz cada coisa?
+
+- Create : Post
+- Read : Get
+- Update : Put e Patch
+- Delete : Delete
+
+## Fetch API
+
+O que é Fetch API?
+
+Fetch api é uma função (nativa do js) assincrona que retorna dados de uma determinada api.
+Fetch por padrão é uma requisição get(mas podemos alterar esse padrão inserindo no 2º parametro)
+
+- Request (requisição)
+
+Leva o nosso pedido para a aplicação que contem as informações.
+
+- Response
+
+São os dados que recebemos dependendo da solicitação.
+
+## Sintaxe
+
+- No primeiro parametro: é a URL da api onde vamos buscar os dados, a fetch api é uma requisição assincrona, ou seja: caso tenhamos mais códigos abaixo da requição, ele não vai esperar a api retornar dados e vai dar sequencia no código.
+
+- then. : após lermos os dados de uma api, precisamos garantir que os dados foram lidos corretamente, ai entra o then() (tradução: depois da leitura da api, faça isso)
+
+```javascript:
+
+function pegarDados(){
+  fetch('https://dadosdaapi')
+  .then((resposta)=>{resposta.json})
+  .then((dados)=> console.log(dados))
+}
+```
+
+1º Then
+
+Estamos criando uma função para a resposta da api (os dados requisitados) e transformando em Json para que possamos ler esses dados: Fetch api não tras os dados de cara pois tem algumas trativas como headers, resposta e etc.
+
+2º then
+
+Criamos mais uma função mas agora para podermos ler os dados carregados pelo json

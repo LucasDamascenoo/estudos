@@ -106,7 +106,7 @@ h2 + p {
 2. Irmão geral
 
 - Modifica o irmão mesmo que tenha outros elementos proximos
-- Apenas o segundo elemento (após o sinal de +) será modificado
+- Apenas o segundo elemento (após o sinal de ~) será modificado
 
 h2 ~ p {
 
@@ -132,7 +132,8 @@ div p {
 
 }
 
-![exemplo-filho-direto](./img/Captura%20de%20tela%20de%202022-11-20%2011-12-46.png)
+![exemplo-filho-direto](./img/
+Captura%20de%20tela%20de%202022-11-20%2011-12-46.png)
 
 # Propriedades e Valores CSS
 
