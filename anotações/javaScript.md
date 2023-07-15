@@ -1032,6 +1032,18 @@ quando utilizamos o setAttibute, passamos dois parametros:
 
 ```
 
+## Adicionando e removendo estilos
+
+Podemos manipular o css atráves de Js.
+
+- Style
+
+Style é uma propriedade que podemos alterar qualquer estilo de css atráves do css.
+
+```js:
+        ink.style.backgroundColor = "yellow";
+```
+
 ## Manipulando Classes
 
 Podemos adicionar, remover, substituir e verificar se existem classes atráves de duas funções className e classList.
@@ -1063,6 +1075,8 @@ Tambem é possivel modificar o valor de uma class com className.
 **caso tenha classe atribuida em um determinado elemento, essa classe é substituida**
 
 - ClassList
+
+Retorna uma lista de todos as classes que existem dentro de um elemento HTML.
 
 Utilizando o classList temos parametros que nos ajudam a manipular essas listas com mais facilidade.
 
@@ -1135,6 +1149,42 @@ Podemos manipular elementos conforme a ação do mouse.
 - mouseleave
 
 ## Bubbling
+
+Bubbling é quando adicionamos um evento por exemplo em uma div, quando damos o click nela, não estamos clicando apenas na div, mas sim no section (pai da div) no body (pai da section e da div) e assim vai.
+
+Isso acontece porque o Javascript sobe o nivel dos nossos eventos. Mas como evitar isso?
+
+Podemosar usar o stopPropagation.
+
+```js:
+
+items.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.stopPropagation();
+    e.target.remove();
+  });
+});
+
+```
+
+**Explicação:** nosso items está dentro de um ul, por trás dos panos com o Bubbling a ul tambem é clicada e os pais dela tambem, para que isso pare de ocorrer e somente os li sejam clicados utilizamos o stopPropagation (método utilizado no event).
+
+## Propagation
+
+Podemos usar o Bubbling ao nosso favor para escrever menos código, utilizando a propagation, como vimos o evento de um li sobe para seu pai ul, com isso podemos utilizar o evento somente no pai (fazendo nosso código mais rapido e perfomatico).
+
+```js:
+list.addEventListener("click", (e) => {
+  // console.log(e);
+  if ((e.target === "li")) {
+    e.target.remove();
+  }
+});
+
+
+```
+
+## Promises
 
 # Trabalhando com API's
 
