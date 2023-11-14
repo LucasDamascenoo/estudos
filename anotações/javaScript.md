@@ -252,8 +252,7 @@ console.log("pode beber") : console.log("não pode beber") // else
 mas como funciona esse ternario?
 
 primeiros colocamos a condição ?
-caso seja verdadeira cai no primeiro console : caso seja falso, cai no segundo
-concole.
+caso seja verdadeira cai no primeiro console : caso seja falso, cai no segundo console.
 
 ## Switch
 
@@ -281,9 +280,35 @@ no nosso caso "monday" que vai executar "dia de planejamento".
 
 Já o Default, é um valor "padrão" que será apresentado caso nenhum das condição dentro do switch seja realizada.
 
+# Truthy and Falsy
+
+Por trás dos panos, o javascript tem valores "implicitos" que em uma condição booleana nos retorna true or false.
+
+## Truthy
+
+os valores abaixos, quando comparados nos retornam uma operação true.
+
+- true
+- strings
+- ' '
+- []
+- {}
+- function () {}
+
+## Falsy
+
+Os valores abaixos, quando comparados nos retornam uma condição falsa.
+
+- false
+- 0
+- "" ou '' (string vazia)
+- null
+- undefined
+- NaN
+
 # Loops
 
-Loops são uma repetição de código atrelada a uma certa condição que enquanto verdadeira executa algo repetidamente.
+Loops são uma estrutura de controle que permite fazer repetição de código atrelada a uma certa condição que enquanto verdadeira executa algo repetidamente.
 
 <b>For</b>: Usamos for em casos que sabemos a quantidade de vezes que iremos repetir um certo código.
 
@@ -317,68 +342,6 @@ while(i<5){
   console.log(i)
   i++
 };
-```
-
-**for of** : Outra maneira mais pratica de iterar sobre arrays,objetos,strings é usando o for of.
-
-```javascript:
-const items = ["book", "table", "chair", "kite"];
-
-for (let item of items) {
-  console.log(item);
-}
-
-```
-
-**forEach()**
-
-Iterar sobre um sem retornar nenhum valor, como fazemos com for, for of.
-
-Vamos a sinxtaxe :
-
-```javascript:
-const social = ["tt", "linkdlin", "facebook", "instagram"];
-
-social.forEach((e, b) => {
-  console.log(e, b);
-});
-
-```
-
-array.forEach () <= estamos chamando o metodo para o array / variavel que queremos iterar
-
-(function(a,b,c) {}) <= estamos criando uma função dentro do metodo, com 3 parametros.
-
-- a : é para trazer o item/nome que queremos trazer (obrigatorio)
-- b : é o indice de cada item iterado [1,2,3]
-- c : é a estrutura do array que estamos iterando ['a','b','c']
-
-**filter()**
-
-Filter é outro método de loop para arrays, mas ao contrarios do forEach, filter retorna valores.
-
-O retorno de um filter sempre vai ser o que for "true" e retorna um novo array.
-
-```javascript:
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14];
-
-const par = numbers.filter((number) => {
-  return number % 2 === 0;
-});
-
-```
-
-**map()**
-
-Map é outro método de array, que retornar/itera um novo array, mas com esse método podemos retornar valores modificados.
-
-```javascript:
-const as = [1, 4, 9, 16];
-
-const asw = as.map((e) => {
-  return e * 3;
-});
-
 ```
 
 # Tipos de Dados (Objetos):
@@ -582,6 +545,9 @@ console.log(familiaOliveira);
 
 //["Bruce", "Tati", "Lucas", "Dona Lucia","zé","Maria]
 
+gsaysgaysgaysgayhhhgsaysgaysgaysgyagsagfvaGFDASGdA SIGD
+
+
 
 ```
 
@@ -698,6 +664,82 @@ numeros.slice(0, 4);
 ```
 
 **Explicação:** No exemplo acima, no primeiro parametro falamos que queremos selecionar a partir do indice 0(10), em seguida no segundo parametro informamos quantos indices queremos deletar a partir do primeiro index , com isso deletamos os numeros [10,20,30,40] , e ficou apenas os valors [50,60,70]
+
+## Métodos Avançados de array
+
+**for of** : Outra maneira mais pratica de iterar sobre arrays,objetos,strings é usando o for of.
+
+```javascript:
+const items = ["book", "table", "chair", "kite"];
+
+for (let item of items) {
+  console.log(item);
+}
+
+```
+
+**forEach()**
+
+Iterar sobre um array sem retornar nenhum valor, como fazemos com for, for of.
+
+Vamos a sinxtaxe :
+
+```javascript:
+const social = ["tt", "linkdlin", "facebook", "instagram"];
+
+social.forEach((e, b) => {
+  console.log(e, b);
+});
+
+```
+
+array.forEach () <= estamos chamando o metodo para o array / variavel que queremos iterar
+
+(function(a,b,c) {}) <= estamos criando uma função dentro do metodo, com 3 parametros.
+
+- a : é para trazer o item/nome que queremos trazer (obrigatorio)
+- b : é o indice de cada item iterado [1,2,3]
+- c : é a estrutura do array que estamos iterando ['a','b','c']
+
+**ForEach não retorna uma novo array**
+
+**filter()**
+
+Filter é outro método para iterar um arrays, mas ao contrarios do forEach, filter retorna valores.
+
+O retorno de um filter sempre vai ser o que for "true" e retorna um novo array.
+
+````javascript:
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14];
+
+const par = numbers.filter((number) => {
+  return number % 2 === 0;
+});```javascript:
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14];
+
+const par = numbers.filter((number) => {
+  return number % 2 === 0;
+});```javascript:
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14];
+
+const par = numbers.filter((number) => {
+  return number % 2 === 0;
+});
+
+++ ------
+
+**map()**
+
+Map é outro método de array, que retornar/itera um novo array, mas com esse método podemos retornar valores modificados.
+
+```javascript:
+const as = [1, 4, 9, 16];
+
+const asw = as.map((e) => {
+  return e * 3;
+});
+
+````
 
 # Funções
 
