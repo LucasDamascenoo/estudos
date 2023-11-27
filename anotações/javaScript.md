@@ -727,10 +727,13 @@ const par = numbers.filter((number) => {
 });
 
 ++ ------
+````
 
 **map()**
 
 Map é outro método de array, que retornar/itera um novo array, mas com esse método podemos retornar valores modificados.
+
+Map se asemelha com o foreach, podemos retornar em um novo array apenas uma condição x ou y, mas tambem podemos fazer modificações.
 
 ```javascript:
 const as = [1, 4, 9, 16];
@@ -739,7 +742,129 @@ const asw = as.map((e) => {
   return e * 3;
 });
 
-````
+```
+
+## Include / Some
+
+Include e some verificar se um determinado valor está presente em um array/array de objetos (some) e nos retorna um valor booleano (true or false)
+
+```js:
+
+
+const familia = ['Lucas','Tati','Bruce','Maicao']
+
+const resultado = familia.include('Bruce');
+
+//true
+
+```
+
+## FindIndex
+
+Resposanvel por buscar o indice de um determinado valor de um array.
+
+```js:
+
+                    0       1     2       3
+const familia = ['Lucas','Tati','Bruce','Maicao']
+
+const resultado = familia.findIndex('Bruce');
+
+//2
+
+```
+
+**Valores não encontrados retornam -1**
+**Retorna Apenas o primeiro elemento/valor mesmo que haja + de 1 valor igual**
+
+## Reduce
+
+Reduce tem como objetivo encontrar a soma/concatenação com base em todo um array.
+
+- Exemplo: quero somar todo o carinho de compra
+
+```js:
+
+const carrinhoCompras = [
+  { nome: "monitor 27", preco: 500 },
+  { nome: "televisao ", preco: 100 },
+  { nome: "tablet", preco: 200 },
+  { nome: "fone", preco: 300 },
+  { nome: "teclado", preco: 400 },
+  { nome: "celular", preco: 700 },
+  { nome: "monitor 28", preco: 500 },
+];
+
+const sumprod = carrinhoCompras.reduce((acc,produto) => {
+
+return acc + produto
+
+},0)
+
+//2700
+
+```
+
+- Mas como funciona o reduce?
+
+1º passamos 2 argumentos (obrigatorios) o acumulador e o item (cada valor do array)
+2º o aculador é o valor "salvo" em cada rodada da iteração
+3º o item é cada valor individual do array
+4º cada rodada soma o acumulador + o item
+
+- e aquele zero no final ali?
+
+No reduce podemos inserir qual o valor inicial do nosso acumulador, no nosso exemplo, começamos por 0.
+
+## Find
+
+find é semelhante ao filter, vai retornar em um novo array o valor que foi determinado na condição.
+
+```js:
+
+const carrinhoCompras = [
+  { nome: "monitor 27", preco: 500 },
+  { nome: "televisao ", preco: 100 },
+  { nome: "tablet", preco: 200 },
+  { nome: "fone", preco: 300 },
+  { nome: "teclado", preco: 400 },
+  { nome: "celular", preco: 700 },
+  { nome: "monitor 28", preco: 500 },
+];
+
+const resultado = carrinhoCompras.find((produto) => {
+
+return produto.preco > 400
+
+})
+
+//  { nome: "monitor 27", preco: 500 }
+
+
+```
+
+**assim como o findIndex, mesmo que exista + de um item que esteja de acordo com a condição retorna apenas o primeiro**
+
+## Every
+
+Com o Every podemos verificar se uma condição x é compativel em todo o array.
+
+```js:
+
+const carrinhoCompras = [1,2,3,4,5,6]
+
+
+const resultado = carrinhoCompras.every(item => {
+  return item < 10
+})
+
+// true
+
+```
+
+No caso acima, o every verificou todo o array, e como todos os valores são menor que 10 retornou true.
+
+**caso tivesse qualquer valor maior que 10, o retorno seria false**
 
 # Funções
 
