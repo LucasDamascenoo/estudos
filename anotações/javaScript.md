@@ -1138,7 +1138,7 @@ div.innerHTML = "<strong>eae</strong>";
 
 - innerText
 
-Adiciona texto nas nossas pagimas mas não aceita elementos html, somente texto.
+Adiciona texto nas nossas paginas mas não aceita elementos html, somente texto.
 
 ```javascript:
 const div = document.createElement("div");
@@ -1256,6 +1256,9 @@ Utilizando o classList temos parametros que nos ajudam a manipular essas listas 
 - classList.contains
   verifica se o determinado elemento contem aquela class.
 
+- classList.toggle
+  verifica se tem a classe (caso tenha remove), se não tiver adiciona
+
 ## como remover elementos do HTML com o DOM
 
 1º vamos selecionar o elemento.
@@ -1275,6 +1278,32 @@ Utilizando o classList temos parametros que nos ajudam a manipular essas listas 
 
 
 ```
+
+## Parentesco
+
+- children
+
+quando selecionamos um elemento pai(container de outros elementos) com o children conseguimos selecionar todos os filhos(e ate mesmo iterar)
+
+```js:
+
+const pai = document.querySelector("article");
+
+//iterando um HTML COLLECTION
+
+Array.from(pai.children).foreach(filho => {})
+
+
+
+```
+
+- ParentElement
+
+Com o ParentElement conseguimos definir qual o elemento pai do elemento selecionado.
+
+- NextElementSibling
+
+Seleciona o proximo elemento (imediatamente apos o irmão selecionado)
 
 ## Eventos
 
